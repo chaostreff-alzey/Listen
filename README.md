@@ -10,5 +10,5 @@ Eine Sammlung an (link-)listen, zB von Dingen, die wir bei Treffen besprochen ha
 
 ## Allgemein
 
-- [Projekte](Projekte.md)
+- [Projektideen](Projektideen.md)
 - [Allgemein](Allgemein.md)
