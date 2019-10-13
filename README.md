@@ -7,6 +7,7 @@ Eine Sammlung an (link-)listen, zB von Dingen, die wir bei Treffen besprochen ha
 | Datum | Liste |
 | --- | --- |
 | 01.09.2019 | [Links](Treffen/2019_09_01.md) |
+| 13.10.2019 | [Links](Treffen/2019_10_13.md) |
 
 ## Allgemein
 
