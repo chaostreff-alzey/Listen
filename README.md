@@ -6,6 +6,7 @@ Eine Sammlung an (link-)listen, zB von Dingen, die wir bei Treffen besprochen ha
 
 | Datum | Liste |
 | --- | --- |
+| 09.01.2020 | [Links](Treffen/2020_02_09.md) |
 | 12.01.2020 | [Links](Treffen/2020_01_12.md) |
 | 01.12.2019 | [Links](Treffen/2019_12_01.md) |
 | 03.11.2019 | [Links](Treffen/2019_11_03.md) |
