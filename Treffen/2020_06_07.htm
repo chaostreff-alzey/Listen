@@ -1,0 +1,106 @@
+<div id="doc" class="markdown-body container-fluid"><h1 id="Chaostreff-vom-07062020">Chaostreff vom 07.06.2020</h1><h2 id="Themen">Themen</h2><ul>
+<li>
+<p>Jan versucht einen Access-token einzutippen. Anscheinend erfolgreich.</p>
+</li>
+<li>
+<p><a href="#Markdown-test">Das Pad wird getestet</a></p>
+</li>
+<li>
+<p><a href="https://www.neo-layout.org/" target="_blank" rel="noopener">Neo 2</a>®©</p>
+</li>
+<li>
+<p><a href="https://www.emojicode.org/" target="_blank" rel="noopener">Emojicode</a></p>
+</li>
+<li>
+<p><a href="#Rust">Rust</a> &lt;- Link geht <s>nicht</s> :)</p>
+</li>
+<li>
+<p><a href="https://nodered.org/" target="_blank" rel="noopener">NodeRED</a></p>
+</li>
+<li>
+<p>Wie und Wann sollten Kinder an Technik herangeführt werden?</p>
+<ul>
+<li>Smartphones ab der 5. Klasse</li>
+<li>Internet ab dem Punkt, wenn man bereit ist mit dem Kind über Pornographie zu reden</li>
+<li>Regeln (Bei Gesprächen nicht)</li>
+<li>Grundlegendes Verständnis vermitteln</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.fieggen.com/shoelace/" target="_blank" rel="noopener">Shoelaces</a></p>
+</li>
+<li>
+<p>Thelie macht jetzt LFS <img class="emoji" alt=":100:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/100.png"></p>
+</li>
+<li>
+<p><a href="https://esolangs.org/logs/stalker.html" target="_blank" rel="noopener">Esoteric IRC Channel</a><br>
+<img src="https://imgs.xkcd.com/comics/team_chat.png" height="222"></p>
+</li>
+<li>
+<p><a href="https://pyra-handheld.com/boards/pages/pyra/" target="_blank" rel="noopener">Pyra Handheld</a></p>
+</li>
+<li>
+<p><a href="http://www.anti-powerpoint-party.com/de" target="_blank" rel="noopener">Anti Powerpoint Partei</a></p>
+</li>
+<li>
+<p>Reverse Proxy mit Apache kommt soon™</p>
+<ul>
+<li><em>$Jemand</em> möchte ein Docker-Image
+<ul>
+<li>Sollte PHP schon mit enthalten</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://eugeneyan.com/2020/04/05/note-taking-zettelkasten/" target="_blank" rel="noopener">Zettelbox-Notizen</a></p>
+<ul>
+<li><a href="https://blog.viktomas.com/posts/slip-box/" target="_blank" rel="noopener">Zettelkasten note-taking in 10 minutes</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://eugeneyan.com/2020/04/05/note-taking-zettelkasten/" target="_blank" rel="noopener">Toki Pona</a></p>
+</li>
+<li>
+<p><a href="http://www.sl4.org/crocker.html" target="_blank" rel="noopener">Crockers Rules</a></p>
+</li>
+<li>
+<p>Diskussion über Antrieb zur Technik-Spielerei (oder sowas)</p>
+<ul>
+<li>Ein Aspekt:<br>
+<img src="https://thumbs.gfycat.com/CluelessDisloyalJaeger-max-14mb.gif" width="100"></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/carlini/printf-tac-toe" target="_blank" rel="noopener">Tic Tac Toe in einer printf()-Anweisung</a></p>
+</li>
+<li>
+<p><a href="https://github.com/go-gitea/gitea/issues/1029" target="_blank" rel="noopener">Gitea Roadmap</a></p>
+</li>
+</ul><h1 id="Rust">Rust</h1><p>Variablen in anderen Threads benutzen:</p><pre><code class="rust hljs"><span class="hljs-keyword">use</span> std::thread::Thread;
+<span class="hljs-keyword">use</span> std::sync::Arc;
+<span class="hljs-keyword">use</span> std::cell::RefCell;
+
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> r = Arc::new(RefCell::new(<span class="hljs-number">42u8</span>));
+    <span class="hljs-keyword">let</span> r1 = r.clone();
+    <span class="hljs-keyword">let</span> t = Thread::scoped(<span class="hljs-keyword">move</span> || {
+        <span class="hljs-keyword">loop</span> {
+            <span class="hljs-keyword">match</span> r1.try_borrow_mut() {
+                <span class="hljs-literal">Some</span>(n) =&gt; { *n += <span class="hljs-number">1</span> ; <span class="hljs-keyword">break</span> }
+                _ =&gt; { }
+            }
+        }
+    });
+
+    t.join();
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, *r.borrow_mut());
+}
+</code></pre><p>Spaß aufgrund von Feld-zugriff durch Kindobjekte:</p><pre><code class="rust hljs"><span class="hljs-keyword">pub</span> store_refs: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">Option</span>&lt;&amp;<span class="hljs-symbol">'a</span> <span class="hljs-keyword">mut</span> Store&lt;<span class="hljs-symbol">'a</span>&gt;&gt;&gt;&gt;,
+</code></pre><p><a href="https://doc.rust-lang.org/stable/book/" target="_blank" rel="noopener">Fangt an Rust zu lernen. (no pressure)</a></p><p><a href="http://cliffle.com/blog/bare-metal-wasm/" target="_blank" rel="noopener">Rust Wasm Demos</a></p><h1 id="Markdown-test">Markdown-test</h1><p><img class="emoji" alt=":santa:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/santa.png"><img class="emoji" alt=":santa:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/santa.png"><img class="emoji" alt=":santa:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/santa.png"><br>
+<img class="emoji" alt=":fire:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/fire.png"><img class="emoji" alt=":fire:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/fire.png"><img class="emoji" alt=":fire:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/fire.png"></p><p><b>Hallo</b></p><img src="https://media.giphy.com/media/Bz853dgjLFEaI/source.gif"><p>λελ λασστ&nbsp;WO IST MEIN 0x41 0x51 0x43 0x49 0x49???!!! Oo</p><p><b>Dies ist ein Body?</b></p><p><em>kursiv</em></p><p><strong>bold</strong></p><p><sub>crossed</sub></p><p>Markdown kann auch <strong>Follmilch</strong>… Ferde mögen das.</p><h2 id="das-ist-eine-Überschrift">das ist eine Überschrift();</h2><p><code>aeaeaeae ueueue</code></p><pre><code>#sweetes markup
+fn hello_world() {
+	println!("hello world.");
+}
+</code></pre></div>
