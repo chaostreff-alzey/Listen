@@ -6,6 +6,11 @@ Eine Sammlung an (link-)listen, zB von Dingen, die wir bei Treffen besprochen ha
 
 | Datum | Liste |
 | --- | --- |
+| 22.11.2020 | [Links](Treffen/2020_11_22.html) |
+| 01.11.2020 | [Links](Treffen/2020_11_01.html) |
+| 04.10.2020 | [Links](Treffen/2020_10_04.html) |
+| 07.09.2020 | [Links](Treffen/2020_09_07.html) |
+| 02.08.2020 | [Links](Treffen/2020_08_02.html) |
 | 07.06.2020 | [Links](Treffen/2020_06_07.htm) |
 | 03.05.2020 | [Links](Treffen/2020_05_03.md) |
 | 05.04.2020 | [Links](Treffen/2020_04_05.md) |
